@@ -280,7 +280,7 @@ Este projeto é propriedade da Contec Contabilidade. Todos os direitos reservado
 
 ---
 
-**Versão**: 2.0.0  
-**Data**: Setembro 2024  
+**Versão**: 1.0.0  
+**Data**: Setembro 2025 
 **Desenvolvido por**: Leonardo Emanuel Manzini
 
