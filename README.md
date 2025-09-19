@@ -270,7 +270,7 @@ Para contribuir com o projeto:
 
 Para suporte técnico ou dúvidas:
 
-- **E-mail**: suporte@contec.com.br
+- **E-mail**: informatica@contec1996.com.br
 - **Documentação**: Este README
 - **Issues**: Use o sistema de issues do repositório
 
@@ -282,5 +282,5 @@ Este projeto é propriedade da Contec Contabilidade. Todos os direitos reservado
 
 **Versão**: 2.0.0  
 **Data**: Setembro 2024  
-**Desenvolvido por**: Equipe de TI da Contec Contabilidade
+**Desenvolvido por**: Leonardo Emanuel Manzini
 
