@@ -1,0 +1,49 @@
+# Jarvis Enhanced - Requirements
+# Core Flask dependencies
+Flask==2.3.3
+Flask-Login==0.6.3
+
+# Authentication and security
+bcrypt==4.0.1
+
+# Environment and configuration
+python-dotenv==1.0.0
+
+# AI and ML
+google-generativeai==0.3.2
+
+# Date and time handling
+python-dateutil==2.8.2
+
+# HTTP requests
+requests==2.31.0
+
+# Optional dependencies for full functionality
+# Uncomment if implementing real integrations
+
+# Microsoft Graph integration
+# msal==1.24.1
+# msgraph-core==0.2.2
+
+# Database (if upgrading from SQLite)
+# psycopg2-binary==2.9.7  # PostgreSQL
+# SQLAlchemy==2.0.21      # ORM
+
+# Advanced ML features
+# sentence-transformers==2.2.2
+# torch==2.0.1
+# numpy==1.24.3
+
+# Production server
+# gunicorn==21.2.0
+# gevent==23.7.0
+
+# Monitoring and logging
+# sentry-sdk==1.32.0
+
+# Development dependencies
+# pytest==7.4.2
+# pytest-flask==1.2.0
+# black==23.7.0
+# flake8==6.0.0
+

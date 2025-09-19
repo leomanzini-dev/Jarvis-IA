@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis IA - Ativação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="background-grid"></div>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='img/icon.png') }}" alt="Jarvis Logo" class="jarvis-logo">
+            </div>
+            
+            <h1 id="login-title"></h1>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-message error">
+                        <p>{{ messages[0] }}</p>
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form method="post" class="login-form" id="login-form">
+                <div class="input-group">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" name="username" placeholder="ID de Usuário" required autocomplete="off">
+                    <span class="input-border"></span>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" name="password" placeholder="Chave de Acesso" required>
+                    <span class="input-border"></span>
+                </div>
+                <button type="submit" class="login-button">INICIAR SESSÃO</button>
+            </form>
+
+            <div id="error-message-container" class="flash-message error" style="display: none;"></div>
+
+            <div class="card-footer">
+                <p>CONTEC Contabilidade // Sistema Interno</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="animation-container">
+        <div class="globe-container">
+            <div class="globe">
+                <div class="globe-scanline"></div>
+            </div>
+        </div>
+        <div class="hud hud-top-left"></div>
+        <div class="hud hud-top-right"></div>
+        <div class="hud hud-bottom-left"></div>
+        <div class="hud hud-bottom-right"></div>
+        <div class="boot-log">
+            <p id="log-text"></p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/login_script.js') }}"></script>
+</body>
+</html>

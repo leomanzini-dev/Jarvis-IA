@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis IA - Painel de Conhecimento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="background-grid"></div>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='img/icon.png') }}" alt="Jarvis Logo" class="header-logo">
+            <h1>Painel de Conhecimento do Jarvis</h1>
+            <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar ao Chat</a>
+        </header>
+
+        <main>
+            <div class="knowledge-card">
+                <h2><i class="fa-solid fa-address-book"></i> Ramais e Equipes</h2>
+                <p>Edite a estrutura de ramais e equipes. O formato deve ser um JSON válido.</p>
+                <textarea id="departments-editor" class="json-editor" spellcheck="false"></textarea>
+                <button class="save-btn" data-key="departments">
+                    <i class="fa-solid fa-save"></i> Salvar Ramais
+                </button>
+            </div>
+
+            <div class="knowledge-card">
+                <h2><i class="fa-solid fa-question-circle"></i> FAQ - Departamento Pessoal</h2>
+                <p>Edite as perguntas e respostas frequentes. O formato deve ser um JSON válido.</p>
+                <textarea id="faq_dp-editor" class="json-editor" spellcheck="false"></textarea>
+                <button class="save-btn" data-key="faq_dp">
+                    <i class="fa-solid fa-save"></i> Salvar FAQ Pessoal
+                </button>
+            </div>
+
+            <div class="knowledge-card">
+                <h2><i class="fa-solid fa-calculator"></i> FAQ - Fiscal</h2>
+                <p>Edite as perguntas e respostas do departamento Fiscal.</p>
+                <textarea id="faq_fiscal-editor" class="json-editor" spellcheck="false"></textarea>
+                <button class="save-btn" data-key="faq_fiscal">
+                    <i class="fa-solid fa-save"></i> Salvar FAQ Fiscal
+                </button>
+            </div>
+
+            <div class="knowledge-card">
+                <h2><i class="fa-solid fa-file-invoice-dollar"></i> FAQ - Contábil</h2>
+                <p>Edite as perguntas e respostas do departamento Contábil.</p>
+                <textarea id="faq_contabil-editor" class="json-editor" spellcheck="false"></textarea>
+                <button class="save-btn" data-key="faq_contabil">
+                    <i class="fa-solid fa-save"></i> Salvar FAQ Contábil
+                </button>
+            </div>
+        </main>
+        
+        <div id="notification" class="notification"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>

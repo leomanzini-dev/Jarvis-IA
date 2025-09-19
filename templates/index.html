@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis IA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="app-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="nav-link">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="link-text">Nova Conversa</span>
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title">Meus Atalhos</h3>
+                <ul id="user-shortcuts-list" class="nav-links shortcuts">
+                    </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <ul class="nav-links">
+                    {% if is_admin %}
+                    <li>
+                        <a href="/admin" class="nav-link">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span class="link-text">Painel Admin</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                     <li>
+                        <a href="/logout" class="nav-link">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span class="link-text">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="chat-area">
+            <div id="chat-container" class="chat-container">
+                <div id="chat-window" class="chat-window">
+                    <div id="welcome-screen" class="welcome-screen">
+                        <div class="welcome-logo-container">
+                            <img src="{{ url_for('static', filename='img/icon.png') }}" alt="Logo Jarvis" class="welcome-logo">
+                        </div>
+                        <h1>Como posso te ajudar hoje?</h1>
+
+                        <div class="suggestion-cards">
+                            <div class="suggestion-card" data-message="Quem faz a empresa " data-append="true">
+                                <i class="fa-solid fa-building-user"></i>
+                                <p>Quem cuida da empresa?</p>
+                            </div>
+                            <div class="suggestion-card" data-message="Qual o ramal de " data-append="true">
+                                <i class="fa-solid fa-phone-volume"></i>
+                                <p>Encontrar um ramal</p>
+                            </div>
+                            <div class="suggestion-card" data-message="O que você pode fazer?">
+                                <i class="fa-solid fa-star-of-life"></i>
+                                <p>O que você pode fazer?</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <footer class="chat-input-area">
+                    <input type="text" id="userInput" placeholder="Converse com o Jarvis...">
+                    <button id="sendButton" title="Enviar Mensagem"><i class="fa-solid fa-paper-plane"></i></button>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <div id="correction-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Corrigir Resposta</h2>
+            <p>Por favor, forneça a resposta que você esperava receber.</p>
+            <textarea id="correction-textarea" placeholder="Digite a resposta correta aqui..."></textarea>
+            <button id="submit-correction-btn">Enviar Correção</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
